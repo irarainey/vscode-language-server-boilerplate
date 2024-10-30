@@ -1,0 +1,13 @@
+node_modules/**
+src/**
+.devcontainer/**
+.vscode/**
+**/*.ts
+**/*.map
+dist/*.vsix
+dist/*.md
+eslint.config.mjs
+.gitignore
+tsconfig.json
+.prettierignore
+.prettierrc

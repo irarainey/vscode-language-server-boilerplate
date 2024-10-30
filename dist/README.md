@@ -1,0 +1,1 @@
+Packaged extensions are created in this directory. The directory needs to exist for VSCE to create the package.

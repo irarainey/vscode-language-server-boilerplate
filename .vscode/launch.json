@@ -1,0 +1,30 @@
+{
+	"version": "0.1.0",
+	"configurations": [
+		{
+			"type": "extensionHost",
+			"request": "launch",
+			"name": "Launch Client",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceRoot}"
+			],
+			"outFiles": [
+				"${workspaceRoot}/dist/*.js"
+			],
+			"preLaunchTask": "npm: build",
+			"sourceMaps": true,
+			"smartStep": true
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "Attach to Server",
+			"port": 6009,
+			"restart": true,
+			"outFiles": [
+				"${workspaceRoot}/dist/*.js"
+			]
+		}
+	]
+}

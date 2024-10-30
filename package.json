@@ -1,0 +1,55 @@
+{
+	"name": "language-server-boilerplate",
+	"displayName": "Language Server Boilerplate",
+	"description": "A Visual Studio Code extension that creates a sample language server for JavaScript files.",
+	"contributors": [
+		"Ira Rainey <ira.rainey@microsoft.com>"
+	],
+	"publisher": "irarainey",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/irarainey/vscode-language-server-boilerplate"
+	},
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"activationEvents": [
+		"onLanguage:javascript"
+	],
+	"main": "./dist/client.js",
+	"scripts": {
+		"package": "vsce package --out dist/",
+		"vscode:prepublish": "npm run package:client && npm run package:server",
+		"build": "npm run build:client && npm run build:server",
+		"build:client": "esbuild src/client.ts --bundle --outfile=./dist/client.js --platform=node --external:vscode --sourcemap",
+		"build:server": "esbuild src/server.ts --bundle --outfile=./dist/server.js --platform=node --external:vscode --sourcemap",
+		"package:client": "esbuild src/client.ts --bundle --outfile=./dist/client.js --platform=node --external:vscode --minify",
+		"package:server": "esbuild src/server.ts --bundle --outfile=./dist/server.js --platform=node --external:vscode --minify",
+		"lint:check": "eslint",
+		"lint:fix": "eslint --fix",
+		"format": "prettier --write \"src/*.ts\"",
+		"bump:minor": "npm version minor --no-git-tag-version",
+		"bump:patch": "npm version patch --no-git-tag-version"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^9.0.1",
+		"vscode-languageserver": "^9.0.1",
+		"vscode-languageserver-textdocument": "^1.0.12"
+	},
+	"devDependencies": {
+		"@types/node": "^22.7.3",
+		"@types/vscode": "^1.80.0",
+		"@typescript-eslint/eslint-plugin": "^8.9.0",
+		"@typescript-eslint/parser": "^8.9.0",
+		"@vscode/vsce": "^3.1.0",
+		"esbuild": "^0.24.0",
+		"eslint": "^9.12.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-prettier": "^5.2.1",
+		"prettier": "^3.3.3",
+		"prettier-plugin-organize-imports": "^4.1.0",
+		"typescript": "^5.6.2"
+	}
+}

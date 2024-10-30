@@ -1,6 +1,6 @@
 # Visual Studio Code Language Server Extension
 
-This project is a sample language server extension for Visual Studio Code. It provides language support for JavaScript files and can be used as a starter project for your own language server extension.
+This project is a bare bones language server extension example for Visual Studio Code. It provides language support for JavaScript files and can be used as a boilerplate project for your own language server extension.
 
 ## Prerequisites
 
